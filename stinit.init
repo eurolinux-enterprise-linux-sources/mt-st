@@ -21,12 +21,12 @@ config=/etc/stinit.def
 
 # See how we were called.
 case "$1" in
-  start)
+  start|force-reload)
         [ -x $exec ] || exit 5
         [ -f $config ] || exit 6
 	$exec
         ;;
-  stop)
+  stop|restart|status)
 	;;
   *)
         echo $"Usage: $0 {start}"

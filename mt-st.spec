@@ -1,7 +1,7 @@
 Summary: Tool for controlling tape drives
 Name: mt-st
 Version: 1.1
-Release: 4%{?dist}
+Release: 5%{?dist}
 License: GPL+
 Group: Applications/System
 URL: ftp://ftp.ibiblio.org/pub/linux/system/backup
@@ -72,6 +72,10 @@ fi
 
 
 %changelog
+* Fri Jul 27 2011 Dan Horák <dhorak@redhat.com> - 1.1-5
+- add missing actions to stinit initscript (#820245)
+- Resolves: rhbz#820245
+
 * Tue Jan  5 2010 Dan Horák <dhorak@redhat.com> - 1.1-4
 - stinit initscript updated (#541592)
 - fixed License
