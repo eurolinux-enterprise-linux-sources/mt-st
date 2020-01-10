@@ -1,7 +1,7 @@
 Summary: Tool for controlling tape drives
 Name: mt-st
 Version: 1.1
-Release: 11%{?dist}
+Release: 13%{?dist}
 License: GPL+
 Group: Applications/System
 URL: ftp://ftp.ibiblio.org/pub/linux/system/backup
@@ -71,6 +71,12 @@ install -D -p -m 0644 %{SOURCE1} $RPM_BUILD_ROOT%{_unitdir}/stinit.service
 
 
 %changelog
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 1.1-13
+- Mass rebuild 2014-01-24
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.1-12
+- Mass rebuild 2013-12-27
+
 * Tue Jul 23 2013 Dan Horák <dan[at]danny.cz> - 1.1-11
 - print all options in stinit's help (#948457)
 - switch to systemd scriptlet macros
