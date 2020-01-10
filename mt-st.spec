@@ -1,7 +1,7 @@
 Summary: Tool for controlling tape drives
 Name: mt-st
 Version: 1.1
-Release: 13%{?dist}
+Release: 14%{?dist}
 License: GPL+
 Group: Applications/System
 URL: ftp://ftp.ibiblio.org/pub/linux/system/backup
@@ -14,6 +14,7 @@ Patch3: mt-st-0.9b-manfix.patch
 Patch4: mt-st-1.1-mtio.patch
 # https://bugzilla.redhat.com/show_bug.cgi?id=948457
 Patch5: mt-st-1.1-options.patch
+Patch6: mt-st-man-page-updates-1_bz948457.patch
 BuildRequires: systemd
 Requires(post): systemd
 Requires(preun): systemd
@@ -35,6 +36,7 @@ Install mt-st if you need a tool to  manage tape drives.
 %patch3 -p1 -b .manfix
 %patch4 -p1 -b .mtio
 %patch5 -p1 -b .options
+%patch6 -p1 -b .man_page_upd1
 
 # fix encoding
 f=README.stinit
@@ -71,6 +73,9 @@ install -D -p -m 0644 %{SOURCE1} $RPM_BUILD_ROOT%{_unitdir}/stinit.service
 
 
 %changelog
+* Tue Sep 30 2014 David Sommerseth <davids@redhat.com> - 1.1-14
+- Updated man page (#948457)
+
 * Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 1.1-13
 - Mass rebuild 2014-01-24
 
